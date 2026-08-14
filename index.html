@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeEase - On-Demand Home Services</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation Bar -->
+        <header class="app-bar">
+            <div class="brand">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-house-chimney-user"></i>
+                </div>
+                <span class="brand-title">HomeEase</span>
+            </div>
+            <div class="user-avatar" title="User Profile">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar">
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content-viewport">
+            
+            <!-- PAGE 1: ServiceCatalogPage -->
+            <section id="ServiceCatalogPage" class="page active">
+                <div class="header-section">
+                    <h1 class="welcome-title">Welcome to HomeEase! 👋</h1>
+                    <p class="subtitle">What help do you need today?</p>
+                </div>
+
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Service cards populated dynamically via app.js -->
+                </div>
+            </section>
+
+            <!-- PAGE 2: BookingPage -->
+            <section id="BookingPage" class="page">
+                <!-- Back Header -->
+                <div class="page-nav">
+                    <button id="btnBackToCatalog" class="back-btn" aria-label="Back to Services">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <h2>Select Time Slot</h2>
+                </div>
+
+                <!-- Summary Banner -->
+                <div class="summary-banner" id="summaryBanner">
+                    <div class="banner-icon-wrapper" id="bannerIconWrapper">
+                        <i class="fa-solid fa-sparkles" id="bannerIcon"></i>
+                    </div>
+                    <div class="banner-info">
+                        <span class="badge">Selected Service</span>
+                        <h3 id="summaryServiceName" class="banner-service-name">Service Name</h3>
+                        <p id="summaryServicePrice" class="banner-service-price">INR 0 / service</p>
+                    </div>
+                </div>
+
+                <!-- Section Header -->
+                <div class="section-header">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <h3>Select a Time Slot (Today)</h3>
+                </div>
+
+                <!-- Slot Selection Grid -->
+                <div class="slots-container" id="slotsContainer">
+                    <!-- Slots populated dynamically via app.js -->
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Booking Confirmation Dialog / Bottom Sheet Overlay -->
+    <div id="bookingModalOverlay" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-status-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 id="modalTitle" class="modal-title">Booking Confirmed!</h3>
+            <p id="modalMessageText" class="modal-message-text">
+                Your booking for Cleaning at 10:00 AM - 11:00 AM is successful! Total amount to pay: INR 100 / service.
+            </p>
+            <div class="modal-actions">
+                <button id="btnDismissModal" class="btn btn-secondary">Dismiss</button>
+                <button id="btnReturnHomeModal" class="btn btn-primary">Return to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
